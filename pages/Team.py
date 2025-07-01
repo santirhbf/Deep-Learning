@@ -34,6 +34,7 @@ def display_team_member(name, role, bio, fun_fact, image_path):
         st.markdown(f"**{role}**")
         st.write(bio)
         st.markdown(f"💡 *{fun_fact}*")
+        st.markdown(f'<p style="font-size:25px; text-align:left; "><br></p>', unsafe_allow_html=True)
 
 col1,col2,col3=st.columns(3)
 with col2:
