@@ -6,4 +6,5 @@ scikit-learn
 seaborn
 transformers
 gdown
+tensorflow
 tf-keras
