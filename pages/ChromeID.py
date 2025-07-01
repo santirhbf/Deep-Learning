@@ -35,10 +35,10 @@ st.title("Welcome to ChromeID!")
 col1,col2,col3=st.columns(3)
 with col2:
     st.image("data/mascota.png", width=200)
-    st.markdown("""👁️ Hi, I am **ChromeID**, and I am here to help you identify any color you want!
-        How **ChromeID** works is, you upload an image with something you would like to identify the color of, and
-        **ChromeID** will do the rest! Sit tight, and it will make you see the world with new eyes!
-        You will never have to worry of mising anything! You are safe with ChromeID!""")
+st.markdown("""👁️ Hi, I am **ChromeID**, and I am here to help you identify any color you want!
+    How **ChromeID** works is, you upload an image with something you would like to identify the color of, and
+    **ChromeID** will do the rest! Sit tight, and it will make you see the world with new eyes!
+    You will never have to worry of mising anything! You are safe with ChromeID!""")
 
 st.title("Upload the image you want ChromeID to see for you!")
 
