@@ -27,6 +27,7 @@ def display_team_member(name, role, bio, fun_fact, image_path):
     col1, col2 = st.columns([1, 3])  # Create two columns for layout
 
     with col1:
+        st.markdown(f'<p style="font-size:25px; text-align:left; "><br></p>', unsafe_allow_html=True)
         st.image(image_path, width=150)  # Display the team member's image
 
     with col2:
