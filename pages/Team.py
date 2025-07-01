@@ -43,7 +43,7 @@ with col2:
 st.markdown(f'<p style="font-size:40px; text-align:center; font-weight:bold; ">Meet Our Team</p>', unsafe_allow_html=True)
 st.markdown(f'<p style="font-size:25px; text-align:left; "><br></p>', unsafe_allow_html=True)
 
-st.markdown("Our team brings together expertise in deep learning, team leadership, , and web development.")
+st.markdown("Our team brings together expertise in deep learning, team leadership, and web development.")
 
 team_members = [
     ("Guillermo Medina", "🚀 Lead Business Strategist", 
