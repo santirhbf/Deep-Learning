@@ -47,16 +47,16 @@ st.markdown("Our team brings together expertise in deep learning, team leadershi
 
 team_members = [
     ("Guillermo Medina", "🚀 Lead Business Strategist", 
-        "🇪🇸 Guillermo is from Valencia and brings **years of consulting and business strategy insights** to the project. 📊 His expertise in **decision-making & market analysis** helped shape the <b>vision</b> of our trading system.",
+        "Guillermo is from Valencia and brings **years of consulting and business strategy insights** to the project. 📊 His expertise in **decision-making & market analysis** helped shape the <b>vision</b> of our trading system.",
         "👨‍🍳 He is a Michelin Star chef at **Yo me lo guiso, yo me lo como**! :avocado:", "data/Guille.jpg"),
 
-    ("Lucía Sarobe", ":eye: Ophthalmologist", 
-        "🇪🇸 Lucía is from Pamplona/Iruña and is **the best Ophtalmologist in Euskal Erria**, she makes sure that everyone can <b>see</b> the world in full HD.",
+    ("Lucía Sarobe", "👁️ Professional Ophthalmologist", 
+        "Lucía is from Pamplona/Iruña and is **the best Ophtalmologist in Euskal Erria**, she makes sure that everyone can <b>see</b> the world in full HD.",
         "📰 She has been on the **front page of Diario de Navarra**! 🌟", "data/Lucia.png"),
 
     ("Santiago Ruiz Hernández", "📌 Project Point Lead", 
-        "🇪🇸 Santiago is from Valencia, Spain, and worked on **various aspects of the project**, acting as a key **point lead** to keep everything running smoothly. 🔄 His contributions touched on multiple areas of **EDA, strategy, and technical implementation**.",
-        ":softball: He is a **professional padel player** and is a **natural redhead**! 🔥", "data/santi.jpg")
+        "Santiago is from Valencia, Spain, and worked on **various aspects of the project**, acting as a key **point lead** to keep everything running smoothly. 🔄 His contributions touched on multiple areas of **EDA, strategy, and technical implementation**.",
+        ":softball: He is a **professional padel player**, and is a **natural redhead**! 🔥", "data/santi.jpg")
 ]
 
 for member in team_members:
