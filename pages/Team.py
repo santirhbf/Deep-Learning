@@ -13,7 +13,7 @@ st.markdown(
 
 PAGES = {
     "Home": "Home.py",
-    "ChromeID": "ChromeID.py",
+    "ChromeID": "pages/ChromeID.py",
     "Team": None
 }
 
