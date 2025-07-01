@@ -4,4 +4,3 @@ pandas as pd
 scikit-learn
 datetime
 pickle
-transformers
