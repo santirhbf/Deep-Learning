@@ -47,11 +47,11 @@ st.markdown("Our team brings together expertise in deep learning, team leadershi
 
 team_members = [
     ("Guillermo Medina", "🚀 Lead Business Strategist", 
-        "Guillermo is from Valencia, and brings **years of consulting and business strategy insights** to the project. 📊 His expertise in **decision-making & market analysis** helped shape the **vision** of our trading system.",
+        "Guillermo is from Valencia, and he made sure ChromeID was perfectly trained to have the most accurate results in the market.",
         "👨‍🍳 He is a Michelin Star chef at **Yo me lo guiso, yo me lo como**! :avocado:", "data/Guille.jpg"),
 
-    ("Lucía Sarobe", "👁️ Professional Ophthalmologist", 
-        "Lucía is from Pamplona/Iruña and is **the best Ophtalmologist in Euskal Erria**, she makes sure that everyone can **see** the world in full HD, her motive in life is helping others.",
+    ("Lucía Sarobe", "👁️ Visualization Professional", 
+        "Lucía is from Pamplona/Iruña, and took care of making sure everything ran smoothly and made sure to bring our solution to everyone.",
         "📰 She has been on the **front page of Diario de Navarra**! 🌟", "data/Lucia.png"),
 
     ("Santiago Ruiz Hernández", "🧑‍💻 Front-End Developer", 
