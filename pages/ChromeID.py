@@ -32,14 +32,15 @@ for page_name, file_path in PAGES.items():
 
 st.title("Welcome to ChromeID!")
 
+col1,col2,col3=st.columns(3)
+with col2:
+    st.image("data/mascota.png", width=200)
+    st.markdown("""👁️ Hi, I am **ChromeID**, and I am here to help you identify any color you want!
+        How **ChromeID** works is, you upload an image with something you would like to identify the color of, and
+        **ChromeID** will do the rest! Sit tight, and it will make you see the world with new eyes!
+        You will never have to worry of mising anything! You are safe with ChromeID!""")
 
-st.image("data/mascota.png", width=200)
-st.markdown(""":eye: Hi, I am **ChromeID**, and I am here to help you identify any color you want!
-    How **ChromeID** works is, you upload an image with something you would like to identify the color of, and
-    **ChromeID** will do the rest! Sit tight, and it will make you see the world with new eyes!
-    You will never have to worry of mising anything! You are safe with ChromeID!""")
-
-st.title("Please upload the image you want ChromeID to see for you!")
+st.title("Upload the image you want ChromeID to see for you!")
 
 # File uploader for images
 uploaded_file = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
@@ -121,7 +122,6 @@ prediction = predict_image_color_vit(uploaded_file, loaded_model, model_processo
 class_folders = ['Black', 'Blue', 'Brown', 'Green', 'red', 'White']
 
 
-col1,col2,col3=st.columns(3)
 with col2:
     if st.button("LET ME SEE!"):
         if prediction in class_folders:
