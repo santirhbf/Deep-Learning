@@ -107,15 +107,13 @@ def get_confirm_token(response):
 
 # File ID from your Google Drive link
 file_id = "121D_p6XdPPLj8dKM09z4zg1jwfEELE3I"
-destination = "color_pred_model.pkl"
+model_path = download_file_from_google_drive(file_id)
 
-# Download the file
-download_file_from_google_drive(file_id, destination)
-
-# Load the pickle model
-with open(destination, "wb") as f:
+# Load the model
+with open(model_path, "rb") as f:
     loaded_model = pickle.load(f)
 
+    
 prediction = predict_image_color_vit(uploaded_file, loaded_model, model_processor, classes_names)
 
 
