@@ -77,43 +77,46 @@ def predict_image_color_vit(file, model, processor, class_names):
     return pred_label
 
 
-def download_file_from_google_drive(file_id):
+
+def download_file_from_google_drive(id_file):
+    def get_confirm_token(response):
+        for key, value in response.cookies.items():
+            if key.startswith('download_warning'):
+                return value
+        return None
+
+    def save_response_content(response, destination):
+        CHUNK_SIZE = 32768
+        with open(destination, "wb") as f:
+            for chunk in response.iter_content(CHUNK_SIZE):
+                if chunk:
+                    f.write(chunk)
+
     URL = "https://docs.google.com/uc?export=download"
     session = req.Session()
 
-    # Initial request
-    response = session.get(URL, params={'id': file_id}, stream=True)
+    # Step 1: Initial request
+    response = session.get(URL, params={'id': id_file}, stream=True)
     token = get_confirm_token(response)
 
     if token:
-        params = {'id': file_id, 'confirm': token}
+        # Step 2: Confirm and re-download
+        params = {'id': id_file, 'confirm': token}
         response = session.get(URL, params=params, stream=True)
 
-    # Save to a temp file
+    # Step 3: Save to temp file
     temp_file = tempfile.NamedTemporaryFile(delete=False)
-    for chunk in response.iter_content(32768):
-        if chunk:
-            temp_file.write(chunk)
-    temp_file.close()
+    save_response_content(response, temp_file.name)
+    return temp_file.name
 
-    return temp_file.name  # Return path to temp file
-
-def get_confirm_token(response):
-    for key, value in response.cookies.items():
-        if key.startswith('download_warning'):
-            return value
-    return None
-
-
-# File ID from your Google Drive link
-file_id = "121D_p6XdPPLj8dKM09z4zg1jwfEELE3I"
+# --- Usage ---
+file_id = "121D_p6XdPPLj8dKM09z4zg1jwfEELE3I"  # Make sure this file is publicly shared!
 model_path = download_file_from_google_drive(file_id)
 
 # Load the model
 with open(model_path, "rb") as f:
     loaded_model = pickle.load(f)
 
-    
 prediction = predict_image_color_vit(uploaded_file, loaded_model, model_processor, classes_names)
 
 
