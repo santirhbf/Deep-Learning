@@ -33,12 +33,16 @@ for page_name, file_path in PAGES.items():
 col1,col2,col3=st.columns(3)
 with col2:
     st.image("data/mascota.png", width=200)
+
+st.markdown(f'<p style="font-size:25px; text-align:left; "><br></p>', unsafe_allow_html=True)
+
+
 st.markdown("""👁️ Hi, I am **ChromeID**, and I am here to help you identify any color you want!
     How **ChromeID** works is, you upload an image with something you would like to identify the color of, and
     **ChromeID** will do the rest! Sit tight, and it will make you see the world with new eyes!
     You will never have to worry of mising anything! You are safe with ChromeID!""")
 
-st.title("Upload the image you want ChromeID to see for you!")
+st.markdown(f'<p style="font-size:25px; text-align:left; ">Upload the image you want <b>ChromeID</b> to see for you!</p>', unsafe_allow_html=True)
 
 # File uploader for images
 uploaded_file = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
