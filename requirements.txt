@@ -1,6 +1,6 @@
-streamlit
-numpy
-pandas
-scikit-learn
-datetime
-pickle
+streamlit==1.25.0
+pandas==2.2.2
+numpy==1.24.4
+matplotlib==3.8.0
+scikit-learn==1.4.2
+seaborn==0.12.2
