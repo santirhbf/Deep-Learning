@@ -27,7 +27,7 @@ with col2:
     st.image("data/logo.png", width=200)
 
 st.markdown(f'<p style="font-size:25px; text-align:left; "><br></p>', unsafe_allow_html=True)
-st.markdown(f'<p style="font-size:35px; text-align:left; ">Welcome to <b>ChromeID!</b> -- Your Intelligent Online Ophtalmologist</p>', unsafe_allow_html=True)
+st.markdown(f'<p style="font-size:35px; text-align:left; ">Welcome to <b>ChromeID!</b> -- Your Intelligent Online Color Detector</p>', unsafe_allow_html=True)
 st.markdown(f'<p style="font-size:15px; text-align:left; ">Now, all the colors of the world, lie within your grasp!</p>', unsafe_allow_html=True)
 st.markdown(f'<p style="font-size:25px; text-align:left; "><br></p>', unsafe_allow_html=True)
 st.markdown(f'<p style="font-size:20px; text-align:left; "><b>ChromeID</b> is an innovative, AI-powered assistant designed to enhance the world of color for people with color vision deficiency. Whether you’re shopping, dressing, designing, or simply exploring your surroundings, ChromeID helps you identify and understand colors you might not easily perceive. Our intelligent system provides clear, accurate color names, contrasts, and suggestions—so you never miss out on the beauty and function of color again. ChromeID empowers you to navigate daily life with more confidence, independence, and creativity. You’re just one step away from seeing the world in a whole new way.</p>', unsafe_allow_html=True)
