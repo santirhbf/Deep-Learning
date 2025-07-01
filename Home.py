@@ -41,11 +41,11 @@ st.markdown(f'<p style="font-size:25px; text-align:left; "><br></p>', unsafe_all
 
 cola,colb,colc=st.columns(3)
 with cola:
-    st.image("data/red_rose.jpeg", height=205)
-    st.image("data/green_grass.jpeg", height=205)
+    st.image("data/red_rose.jpeg", width=205)
+    st.image("data/green_grass.jpeg", width=205)
 with colb:
-    st.image("data/pink_donut.jpeg", height=205)
-    st.image("data/orange_nature.jpeg", height=205)
+    st.image("data/pink_donut.jpeg", width=205)
+    st.image("data/orange_nature.jpeg", width=205)
 with colc:
-    st.image("data/blue_ocean.jpeg", height=205)
-    st.image("data/yellow_sun.jpeg", height=205)
+    st.image("data/blue_ocean.jpeg", width=205)
+    st.image("data/yellow_sun.jpeg", width=205)
