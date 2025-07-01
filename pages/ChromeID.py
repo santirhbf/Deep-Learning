@@ -30,8 +30,6 @@ for page_name, file_path in PAGES.items():
     else:
         st.sidebar.write(f"### {page_name}")
 
-st.title("Welcome to ChromeID!")
-
 col1,col2,col3=st.columns(3)
 with col2:
     st.image("data/mascota.png", width=200)
