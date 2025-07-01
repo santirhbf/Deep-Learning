@@ -30,11 +30,11 @@ for page_name, file_path in PAGES.items():
     else:
         st.sidebar.write(f"### {page_name}")
 
-st.sidebar.title("Welcome to ChromeID!")
+st.title("Welcome to ChromeID!")
 
 
-st.sidebar.image("data/mascota.png", width=200)
-st.sidebar.markdown(
+st.image("data/mascota.png", width=200)
+st.markdown(
     "<p class='dog-text'>:eye: Hi, I am <b>ChromeID</b>, and I am here to help you identify any color you want!"
     " How <b>ChromeID</b> works is, you upload an image with something you would like to identify the color of, and our "
     "<b>ChromID</b> will do the rest! Sit tight, and it will make you see the world with new eyes!",
