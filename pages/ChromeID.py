@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import pickle
 from PIL import Image
-from transformers import ViTImageProcessor
+import transformers
 import os
 import matplotlib.pyplot as plt
 import requests as req
@@ -53,7 +53,7 @@ if uploaded_file is not None:
     st.image(image, caption="Uploaded Image", use_column_width=True)
 
 
-model_processor = ViTImageProcessor.from_pretrained("google/vit-base-patch16-224")
+model_processor = transformers.ViTImageProcessor.from_pretrained("google/vit-base-patch16-224")
 classes_names = sorted(os.listdir("data/cleaned_color_dataset"))
 
 
