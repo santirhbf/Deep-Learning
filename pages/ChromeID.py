@@ -6,6 +6,7 @@ import transformers
 import os
 import matplotlib.pyplot as plt
 import requests as req
+import tempfile
 
 st.markdown(
     """
@@ -76,35 +77,32 @@ def predict_image_color_vit(file, model, processor, class_names):
     return pred_label
 
 
-def download_file_from_google_drive(id_file, destination_name):
+def download_file_from_google_drive(file_id):
     URL = "https://docs.google.com/uc?export=download"
-
     session = req.Session()
 
     # Initial request
-    response = session.get(URL, params={'id': id_file}, stream=True)
+    response = session.get(URL, params={'id': file_id}, stream=True)
     token = get_confirm_token(response)
 
     if token:
-        # Re-request with confirmation
         params = {'id': file_id, 'confirm': token}
         response = session.get(URL, params=params, stream=True)
 
-    save_response_content(response, destination_name)
+    # Save to a temp file
+    temp_file = tempfile.NamedTemporaryFile(delete=False)
+    for chunk in response.iter_content(32768):
+        if chunk:
+            temp_file.write(chunk)
+    temp_file.close()
+
+    return temp_file.name  # Return path to temp file
 
 def get_confirm_token(response):
     for key, value in response.cookies.items():
         if key.startswith('download_warning'):
             return value
     return None
-
-def save_response_content(response, destination_name):
-    CHUNK_SIZE = 32768  # 32 KB
-
-    with open(destination_name, "rb") as f:
-        for chunk in response.iter_content(CHUNK_SIZE):
-            if chunk:
-                f.write(chunk)
 
 
 # File ID from your Google Drive link
