@@ -5,8 +5,6 @@ from PIL import Image
 import transformers
 import os
 import matplotlib.pyplot as plt
-import requests as req
-import tempfile
 
 st.markdown(
     """
@@ -76,46 +74,6 @@ def predict_image_color_vit(file, model, processor, class_names):
 
     return pred_label
 
-
-
-def download_file_from_google_drive(id_file):
-    def get_confirm_token(response):
-        for key, value in response.cookies.items():
-            if key.startswith('download_warning'):
-                return value
-        return None
-
-    def save_response_content(response, destination):
-        CHUNK_SIZE = 32768
-        with open(destination, "wb") as f:
-            for chunk in response.iter_content(CHUNK_SIZE):
-                if chunk:
-                    f.write(chunk)
-
-    URL = "https://docs.google.com/uc?export=download"
-    session = req.Session()
-
-    # Step 1: Initial request
-    response = session.get(URL, params={'id': id_file}, stream=True)
-    token = get_confirm_token(response)
-
-    if token:
-        # Step 2: Confirm and re-download
-        params = {'id': id_file, 'confirm': token}
-        response = session.get(URL, params=params, stream=True)
-
-    # Step 3: Save to temp file
-    temp_file = tempfile.NamedTemporaryFile(delete=False)
-    save_response_content(response, temp_file.name)
-    return temp_file.name
-
-# --- Usage ---
-file_id = "121D_p6XdPPLj8dKM09z4zg1jwfEELE3I"  # Make sure this file is publicly shared!
-model_path = download_file_from_google_drive(file_id)
-
-# Load the model
-with open(model_path, "rb") as f:
-    loaded_model = pickle.load(f)
 
 prediction = predict_image_color_vit(uploaded_file, loaded_model, model_processor, classes_names)
 
