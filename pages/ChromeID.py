@@ -5,6 +5,8 @@ from PIL import Image
 import transformers
 import os
 import matplotlib.pyplot as plt
+import gdown
+
 
 st.markdown(
     """
@@ -73,6 +75,18 @@ def predict_image_color_vit(file, model, processor, class_names):
     plt.show()
 
     return pred_label
+
+
+# Download the model if it doesn't already exist
+MODEL_URL = "https://drive.google.com/uc?id=121D_p6XdPPLj8dKM09z4zg1jwfEELE3I"
+MODEL_FILE = "color_pred_color.pkl"
+
+if not os.path.exists(MODEL_FILE):
+    gdown.download(MODEL_URL, MODEL_FILE, quiet=False)
+
+# Load the model
+with open(MODEL_FILE, "rb") as f:
+    loaded_model = pickle.load(f)
 
 
 prediction = predict_image_color_vit(uploaded_file, loaded_model, model_processor, classes_names)
