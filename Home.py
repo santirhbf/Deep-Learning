@@ -35,11 +35,13 @@ st.markdown(f'<p style="font-size:25px; text-align:left; "><br></p>', unsafe_all
 st.markdown(f'<p style="font-size:25px; text-align:left;font-weight:bold;">What are you waiting for?</p>', unsafe_allow_html=True)
 st.markdown(f'<p style="font-size:25px; text-align:left; ">Start your experience here!</p>', unsafe_allow_html=True)
 website_url = "https://deep-learning-xyjfsdgreafpa5dj36ctzz.streamlit.app/ChromeID"
-if st.button("LET'S GO!"):
-    st.markdown(f'<meta http-equiv="refresh" content="0; URL={website_url}">', unsafe_allow_html=True)
-st.markdown(f'<p style="font-size:25px; text-align:left; "><br></p>', unsafe_allow_html=True)
 
 cola,colb,colc=st.columns(3)
+with colb:
+    if st.button("LET'S GO!"):
+        st.markdown(f'<meta http-equiv="refresh" content="0; URL={website_url}">', unsafe_allow_html=True)
+    st.markdown(f'<p style="font-size:25px; text-align:left; "><br></p>', unsafe_allow_html=True)
+
 with cola:
     st.image("data/red_rose.jpeg", width=205)
     st.image("data/green_grass.jpeg", width=205)
