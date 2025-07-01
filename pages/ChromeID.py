@@ -115,7 +115,7 @@ destination = "color_pred_model.pkl"
 download_file_from_google_drive(file_id, destination)
 
 # Load the pickle model
-with open(destination, "rb") as f:
+with open(destination, "wb") as f:
     loaded_model = pickle.load(f)
 
 prediction = predict_image_color_vit(uploaded_file, loaded_model, model_processor, classes_names)
