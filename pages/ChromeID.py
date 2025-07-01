@@ -34,13 +34,10 @@ st.title("Welcome to ChromeID!")
 
 
 st.image("data/mascota.png", width=200)
-st.markdown(
-    "<p class='dog-text'>:eye: Hi, I am <b>ChromeID</b>, and I am here to help you identify any color you want!"
-    " How <b>ChromeID</b> works is, you upload an image with something you would like to identify the color of, and our "
-    "<b>ChromID</b> will do the rest! Sit tight, and it will make you see the world with new eyes!",
-    "You will never have to worry of mising anything! You are safe with ChromeID!</p>",
-    unsafe_allow_html=True
-)
+st.markdown(""":eye: Hi, I am <b>ChromeID</b>, and I am here to help you identify any color you want!
+    How <b>ChromeID</b> works is, you upload an image with something you would like to identify the color of, and our
+    <b>ChromeID</b> will do the rest! Sit tight, and it will make you see the world with new eyes!
+    You will never have to worry of mising anything! You are safe with ChromeID!</p>""")
 
 st.title("Please upload the image you want ChromeID to see for you!")
 
